@@ -6,10 +6,10 @@ class Stews < Formula
   license "MIT"
   version "0.0.4"
 
-  depends_on "node"
+  depends_on "rust" => :build
 
   def install
-    system "npm", "install", *std_npm_args
+    system "cargo", "install", *std_cargo_args(path: ".")
   end
 
   test do
